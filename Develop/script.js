@@ -42,13 +42,13 @@ function generatePassword(){
 //This will grab the user data for the password critera
 alert("Please enter in the password critera");
 var charLong = prompt("How many characters would you like to enter?(8-128)");
-    if(charLong >= 8 || charLong <= 128){
-      alert("Password ize is "+charlong + "charctors long");
+ if(charLong >= "8" || charLong <= "128"){
+      alert("Password size is "+ charLong + " characters long");
     }else {
-      charLong = promp("Please enter a number of characters between 8-128. ");
+      charLong = prompt("Please enter a number of characters between 8-128. ");
     }
 
-var numbers = prompt("Would you like to add numbers to your password? ");
+var numbers = prompt("Would you like to add numbers to your password? (y/n)");
 var upperCase = prompt("Would you like to add upper case letters? (y/n)");
 var lowerCase = prompt("Would you like to add lower case letters? (y/n)");
 var specialChar = prompt("Would you like to add special characters?(y/n)");

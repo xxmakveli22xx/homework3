@@ -15,15 +15,19 @@ function generatePassword(){
   var passwordSize = charLong;
   var password= "";
   var random = "";
-  console.log("this is password size " +passwordSize);
+  var symbols = "!@#$%^&*(){}";
+  var sizeArry = choices.length;
+  
   
   
   for(var i = 0; i < passwordSize; i++){
-      
+    
+    choices[Math.floor(Math.random()*sizeArry)];
+    console.log("this is random choice " + choices[Math.floor(Math.random()*sizeArry)]);
    
     random = String.fromCharCode((Math.floor(Math.random()*26) +97));
 
-    console.log("this is random " +random);
+  
     password += random;
     console.log("this is password "+ password);
 
@@ -37,18 +41,25 @@ function generatePassword(){
 
 //This will grab the user data for the password critera
 alert("Please enter in the password critera");
-var charLong = prompt("How many characers would you like to enter?(8-12)");
+var charLong = prompt("How many characters would you like to enter?(8-128)");
+    if(charLong >= 8 || charLong <= 128){
+      alert("Password ize is "+charlong + "charctors long");
+    }else {
+      charLong = promp("Please enter a number of characters between 8-128. ");
+    }
+
 var numbers = prompt("Would you like to add numbers to your password? ");
 var upperCase = prompt("Would you like to add upper case letters? (y/n)");
 var lowerCase = prompt("Would you like to add lower case letters? (y/n)");
 var specialChar = prompt("Would you like to add special characters?(y/n)");
 
+
 if(numbers === 'y'){
    numbers = true;
+
 }else {
   numbers = false;
 }
-
 
 if(upperCase ==='y'){
    upperCase = true;
@@ -66,7 +77,7 @@ if(lowerCase ==='y'){
 
 if(specialChar ==='y'){
   specialChar = true;
-  console.log("inside the true statement "+ specialChar);
+  //console.log("inside the true statement "+ specialChar);
 }else {
  specialChar = false;
 }

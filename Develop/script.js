@@ -15,19 +15,19 @@ function generatePassword(){
   var passwordSize = charLong;
   var password= "";
   var random = "";
-  var symbols = "!@#$%^&*(){}";
-  var sizeArry = choices.length;
   
+   var sizeArry = choice.length;
   
+  choice[1];
+  choice[0];
   
   for(var i = 0; i < passwordSize; i++){
     
-    choices[Math.floor(Math.random()*sizeArry)];
-    console.log("this is random choice " + choices[Math.floor(Math.random()*sizeArry)]);
+    //choice[Math.floor(Math.random()*sizeArry)];
+   // console.log("this is random choice " + choices[Math.floor(Math.random()*sizeArry)]);
    
-    random = String.fromCharCode((Math.floor(Math.random()*26) +97));
+    random = choice[Math.floor(Math.random()* sizeArry)];
 
-  
     password += random;
     console.log("this is password "+ password);
 
@@ -36,6 +36,23 @@ function generatePassword(){
   
   return  password;
 }
+
+
+function upperFunc(){
+ console.log("inside upper func");
+ return String.fromCharCode(Math.floor(Math.random()*26) + 65);
+ 
+}
+
+function lowerFunc(){
+  console.log("inside lower func");
+  return String.fromCharCode(Math.floor(Math.random()*26) +97);
+}
+
+function symbolFunc(){
+  return; 
+}
+
 
 
 
@@ -52,41 +69,35 @@ var numbers = prompt("Would you like to add numbers to your password? (y/n)");
 var upperCase = prompt("Would you like to add upper case letters? (y/n)");
 var lowerCase = prompt("Would you like to add lower case letters? (y/n)");
 var specialChar = prompt("Would you like to add special characters?(y/n)");
+var choice = [];
+
 
 
 if(numbers === 'y'){
    numbers = true;
+  // choice = choice.concat("numbers");
 
-}else {
-  numbers = false;
+
+
+
 }
-
 if(upperCase ==='y'){
    upperCase = true;
+   choice = choice.push(upperFunc);
 
-}else {
-  upperCase = false;
+
 }
 
 if(lowerCase ==='y'){
   lowerCase = true;
+  choice = choice.push(lowerFunc);
 
-}else {
- lowerCase = false;
 }
 
 if(specialChar ==='y'){
   specialChar = true;
-  //console.log("inside the true statement "+ specialChar);
-}else {
- specialChar = false;
+  choice = choice.concat();
 }
-
-//console.log("this is special answer " +specialChar);
-// gives us all the true values so we can see which critera is needed
-const choices =[{numbers}, {upperCase}, {lowerCase}, {specialChar}].filter (choice => Object.values(choice)[0]);
-
-console.log("True, false choices : ", choices);
 
 
 

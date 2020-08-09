@@ -77,7 +77,7 @@ if(lowerCase ==='y'){
 
 if(specialChar ==='y'){
   specialChar = true;
-  choice = choice.concat(special);
+  choice = choice.concat(specialArray);
 }
 
 

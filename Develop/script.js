@@ -16,42 +16,26 @@ function generatePassword(){
   var password= "";
   var random = "";
   
-   var sizeArry = choice.length;
+  var sizeArry = choice.length;
   
-  choice[1];
-  choice[0];
-  
+ // this will create a for loop to use Math.random to pick a char out of the array
   for(var i = 0; i < passwordSize; i++){
-    
-    //choice[Math.floor(Math.random()*sizeArry)];
-   // console.log("this is random choice " + choices[Math.floor(Math.random()*sizeArry)]);
-   
     random = choice[Math.floor(Math.random()* sizeArry)];
-
     password += random;
-    console.log("this is password "+ password);
-
- 
   }
-  
-  return  password;
+   return  password;
 }
 
 
-function upperFunc(){
- console.log("inside upper func");
- return String.fromCharCode(Math.floor(Math.random()*26) + 65);
- 
-}
-
-function lowerFunc(){
-  console.log("inside lower func");
-  return String.fromCharCode(Math.floor(Math.random()*26) +97);
-}
-
-function symbolFunc(){
-  return; 
-}
+//this will create the strings and turn them into arrays
+var uppCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var uppArray = uppCase.split("");
+var lowerCase = "abcdefghijklmnopqrstuvwxyz";
+var lowArray   = lowerCase.split("");
+var num = "01234567890123456789";
+var numArray = num.split("");
+var special = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
+var specialArray = special.split("");
 
 
 
@@ -59,7 +43,7 @@ function symbolFunc(){
 //This will grab the user data for the password critera
 alert("Please enter in the password critera");
 var charLong = prompt("How many characters would you like to enter?(8-128)");
- if(charLong >= "8" || charLong <= "128"){
+ if(charLong >= 8 && charLong <= 128){
       alert("Password size is "+ charLong + " characters long");
     }else {
       charLong = prompt("Please enter a number of characters between 8-128. ");
@@ -72,31 +56,28 @@ var specialChar = prompt("Would you like to add special characters?(y/n)");
 var choice = [];
 
 
-
+//if true will add the selection at the end of the array
 if(numbers === 'y'){
    numbers = true;
-  // choice = choice.concat("numbers");
-
-
-
+  choice = choice.concat(numArray);
 
 }
 if(upperCase ==='y'){
    upperCase = true;
-   choice = choice.push(upperFunc);
+   choice = choice.concat(uppArray);
 
 
 }
 
 if(lowerCase ==='y'){
   lowerCase = true;
-  choice = choice.push(lowerFunc);
+  choice = choice.concat(lowArray);
 
 }
 
 if(specialChar ==='y'){
   specialChar = true;
-  choice = choice.concat();
+  choice = choice.concat(special);
 }
 
 
@@ -108,7 +89,3 @@ generateBtn.addEventListener("click", writePassword);
 
 
 
-
-//(Math.floor(Math.random()*26) + 97);
-//(math.floor(math.random()*26) + 65);
-//(math.floor(math.random()*10) + 48);
